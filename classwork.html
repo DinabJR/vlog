@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="screen"></h1>
+    <button onclick="prev()">Previous</button>
+    <!-- <span id="fig">01</span> -->
+    <button onclick="next()">Next</button>
+
+</body>
+</html>
+
+<script>
+    let screen = document.getElementById("screen")
+    let text = [{info: "Java script is a scripting language"}, {info: "CSS is used to style the html page"}]
+    let index = 0;
+
+    screen.innerHTML = text[index].info
+
+    function next(){
+        index++
+        screen.innerHTML = text[index].info
+    }
+
+    function prev(){
+        index--
+        screen.innerHTML = text[index].info
+    }
+</script>

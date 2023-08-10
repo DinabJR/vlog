@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <button onclick="multiply()"> click </button>
+    <div id="result"></div>
+</body>
+<script>
+    //  let input1 = document.getElementById("input1")
+    // let input2 = document.getElementById("input2")
+    // let result = document.getElementById("result")
+
+
+
+
+    
+
+    // function multiply(){
+    //     result.innerHTML = ""
+    //     let mun = Number(input1.value)
+    //     let moa = Number(input2.value)
+
+    //     for (let i = 0; i <=moa; i++) {
+    //         let x = mun * i;
+    //         result.innerHTML += `${mun} x ${i} = ${x}<br>`
+
+    //     }
+
+    //     // input1.value = ""
+    //     input2.value = ""
+
+    // }
+
+    // Array iteration methods
+    let arr1 = [1,2,3,,4,5,6,7,8,9,10]
+    
+    //The forEach() method in JS imolements a function for every item in an array.
+    const multiply = (item, index)=>{
+        console.log(item * 2)
+        return item*3
+    }
+    arr1.forEach(multiply)
+
+    // The map() method in JS performs an operation for every item in an array and returns a new array consisting of the new values of the said operation
+    let test = arr1.map((item, index)=>{
+        console.log(item * 3)
+        return item*3
+    })
+    console.log(test)
+
+    let names = ["Adewole", "Adebayo", 'Adeola', "Ademola", "Adebola", "Abiola", "Taiwo", "Kehinde", "Idowu"]
+    let test2 = names.filter((item)=>{
+        if(item.includes("Ade")){
+            return item
+        }
+    })
+    console.log(test2)
+
+    
+
+
+</script>
+</html>

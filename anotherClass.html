@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Downloads/bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Class</th>
+                    <th>Hobbies</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+
+        <button onclick="minus">-</button>
+        <span id="fig"></span>
+        <button onclick="plus">+</button>
+
+        <img id="dispImg" alt="">
+
+    </main>
+
+    <!-- <input type="text" id="textinput1">
+    <input type="text" id="textinput2">
+    
+    <button onclick="getInputvalue()">Click</button>
+-->
+</body>
+<script>
+    
+    let img = ["dice 2.png", "football.jpg", "dice.png", "netflix 3.png"]
+    let dispImg = document.getElementById(dispImg)
+    dispImg.src = img[0]
+
+    
+    let num = 1
+    fig.innerHTML = num
+    let tbody = document.getElementById("tbody");
+    let info = {
+        name: "Evans",
+        age: 3,
+        class: "HTML",
+        hobbies: ["Swimming", "Singing", "Sleeping", "Eating"]
+    }
+    tbody.innerHTML = `
+    <tr>
+        <td>${info.name}</td>
+        <td>${info.age}</td>
+        <td>${info.class}</td>
+        <td>${info.hobbies}</td>
+        </tr>
+        `
+        var figure = document.getElementById("fig")
+        
+        function add() {
+            let val = Number(figure.innerHTML)
+            if (Number(figure.innerHTML) < 10) {
+                val = val + 1
+                figure.innerHTML = val
+            }
+        }
+            
+        
+        
+        // let input1 = document.getElementById("textinput1")
+    // let input2 = document.getElementById("textinput2")
+    // input1.value = "i love amala"
+    // let result = input1.value;
+
+    // function getInputvalue(){
+    //     input2.value = "i love"
+    //     input2.value = result.replace("amala", "poounded yam");
+    //     input1.value = ""
+    // }
+
+   //CLASSES AGIN IN JS
+//    let test = {
+//     name: "evans",
+//     age:777,
+//     color:"white"
+//    }
+
+//    console.log(test);
+ </script>
+</html>

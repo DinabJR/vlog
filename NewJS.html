@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guessing Game</h1>
+    <input type="text" id="rand" >
+    <button onclick="checkNum()">Check Number</button>
+
+    <hr>
+    <h1>Recharge Card System</h1>
+    <div>
+        <label for="">Select Network</label>
+        <select name="" id="network">
+            <option value="MTN">MTN</option>
+            <option value="GLO">GLO</option>
+            <option value="AIRTEL">AIRTEL</option>
+            <option value="9MOBILE">9MOBILE</option>
+        </select>
+
+        <label for="">Select Amount</label>
+        <select name="" id="amount">
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+        </select>
+
+        <button onclick="generate()">Generate Airtime</button>
+        <p>The pin is <span id="pin"></span></p>
+        <hr>
+        <h1>Load Airtime</h1>
+        <label for="">For Mtn</label>
+        <input type="text" id="rechargepin">
+        <button onclick="load()">Load Airtime</button>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    // Math.random - used to generate random numbers in javascript
+    // Math.floor
+    let network = document.getElementById("network")
+    let amount = document.getElementById("amount")
+    let pin = document.getElementById("pin")
+    let simcard = []
+    let sims = {}
+    let randNum
+    let rechargepin = document.getElementById("rechargepin")
+
+    function generate(){
+        
+        sims = {input1:network.value, input2:amount.value}
+        // console.log(sims)
+        if (sims.input1 == "MTN") {
+            randNum = Math.floor(Math.random() * 100000)
+            pin.innerHTML = randNum
+            console.log(network.value, "network");
+            console.log(amount.value, "Amount");
+            console.log(randNum, "airtime");
+        } else {
+            alert("Use MTN")
+        }
+    }
+
+    function load() {
+        let mypin = pin.innerHTML
+        if (rechargepin.value.includes("*555*" && "#" && randNum)) {
+            alert(`You just loaded ${sims.input1} recharge card of ${sims.input2}` )
+        } else {
+            alert("Check what you typed")
+        }
+    }
+
+    // let num = Math.floor(Math.random() * 100000)
+    // let rand = document.getElementById("rand")
+    // let num = Math.floor(Math.random() * 10)
+    // console.log(num);
+    // function checkNum(){
+        // if(rand.value == num){
+            // alert("correct")
+        // }else{
+            // alert("wrong")
+        // }
+    // }
+    // console.log(2 == "2");
+    // console.log(2 === "2");
+</script>

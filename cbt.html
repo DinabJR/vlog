@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+</body>
+</html>
+<script>
+
+    let currentIndex = 0
+
+    let cbt = [
+        {
+            question: "what is your favorite food",
+            Option: ["Rice", "Beans", "Yam", "Spag"]
+        },
+        {
+            question: "what is your favorite color",
+            Option: ["Yellow", "Green", "Red", "Blue"]
+        }
+    ]
+
+         first.innerHTML = cbt[currentIndex].question
+    document.getElementById("firstques").innerHTML = cbt[currentIndex].option[0];
+    document.getElementById("secondques").innerHTML = cbt[currentIndex].option[1];
+    document.getElementById("thirdques").innerHTML = cbt[currentIndex].option[2];
+    document.getElementById("fourthques").innerHTML = cbt[currentIndex].option[3];
+
+    function prev(){
+         currentIndex++;
+         first.innerHTML = cbt[currentIndex].question
+    document.getElementById("firstques").innerHTML = cbt[currentIndex].option[0];
+    document.getElementById("secondques").innerHTML = cbt[currentIndex].option[1];
+    document.getElementById("thirdques").innerHTML = cbt[currentIndex].option[2];
+    document.getElementById("fourthques").innerHTML = cbt[currentIndex].option[3];
+
+    }
+
+
+</script>

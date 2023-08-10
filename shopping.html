@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Shooping List</h1>
+        <input id="input1" type="text" placeholder="Item"><br>
+        <input id="input1" type="text" placeholder="Quantity">
+        <input id="input1" type="text" placeholder="Price">
+        <div>
+            <button onclick="show()">Submit</button>
+            <p>Total: <span id="add"></span></p>
+        </div>
+        <div id="result"></div>
+    </div>
+</body>
+<script>
+    let arr1 = []
+    let input1 = document.getElementById("input1")
+    let input2 = document.getElementById("input2")
+    let input3 = document.getElementById("input3")
+    let total = document.getElementById("add")
+    let result = document.getElementById("result")
+
+
+
+    function show(){
+        let data = {
+            items : input1.value,
+            price : input2.value,
+            quantity : input3.value,
+        }
+
+        arr1.push(data)
+        result.innerHTML = ""
+        for (let i = 0; i < arr1.length; i++) {
+            let element = arr1[i];
+
+
+            result.innerHTML += `
+            <div class="result">
+            <div>Items: ${element.items}</div>
+            <div>Price: ${element.price}</div>
+            <div>Quantity: ${element.quantity}</div>
+            <div>subtotal: ${(element.price) * (element.quantity)}</div>
+            <button onclick="edit(${i})">edit</button> 
+            <button onclick="del(${i})">delete</button>
+            </div> `
+
+
+
+            total.InnerHTML = arr1.reduce(function (total, item){
+                retuen (item.price * item.quantity) + total
+            },0)
+
+            }
+
+        }
+    
+    function del(i) {
+
+        arr1.splice(i,1)
+        result.InnerHTML = ""
+        for (let i = 0; i < arr1.length; i++) {
+            let element = arr1[i];
+
+            result.innerHTML += `
+            <div class="result">
+            <div>Items: ${element.items}</div>
+            <div>Price: ${element.price}</div>
+            <div>Quantity: ${element.quantity}</div>
+            <div>subtotal: ${(element.price) * (element.quantity)}</div>
+            <button onclick="edit(${i})">edit</button> 
+            <button onclick="del(${i})">delete</button>
+            </div> `
+
+        }
+    }
+
+    function edit(i) {
+        let rice1 = prompt("enter new item")
+        let rice2 = prompt("enter new price")
+        let rice3 = prompt("enter new quantity")
+        let brand = {
+            items : rice1,
+            price : rice2,
+            quantity : rice3,
+        }
+
+        arr1.splice(i,1)
+        result.InnerHTML = ""
+        for (let i = 0; i < arr1.length; i++) {
+            let element = arr1[i];
+
+            result.innerHTML += `
+            <div class="result">
+            <div>Items: ${element.items}</div>
+            <div>Price: ${element.price}</div>
+            <div>Quantity: ${element.quantity}</div>
+            <div>subtotal: ${(element.price) * (element.quantity)}</div>
+            <button onclick="edit(${i})">edit</button> 
+            <button onclick="del(${i})">delete</button>
+            </div> `
+
+            total.innerHTML= arr1.reduce(function (total,item){
+                return (item.price * item.quantity) + total
+            },0)
+
+        }
+        
+    }
+</script>
+</html>

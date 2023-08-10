@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO list</title>
+    <link rel="stylesheet" href="../../Downloads/bootstrap-5.3.0-dist/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">TO-DO LIST</a>
+            </div>
+        </nav>
+        <div class="input-group mb-3">
+            <br>
+            <input type="text" class="form-control" placeholder="items" aria-label="list" aria-describedby="button-addon2" id="input">
+            <button onclick="add()" class="btn btn-outline-secondary" type="button" id="button-addon2">ADD</button>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid container w-50 border-danger text-center">
+        <p id="todolist"></p>
+    </div>
+</body>
+<script>
+    let arr1 = []
+    function add(){
+        let input = document.getElementById("input").value
+        let todolist = document.getElementById('todolist')
+        arr1.push(input)
+        todolist.innerHTML = ""
+        for(i = 0; i < arr1.lenght; i++){
+            todolist.innerHTML += ` <h3> ${arr1[i]} <button class= "btn bttn btn-info w-25" id="btn" onclick="del(${i})">DELETE</button> <button class= "btn bttn btn-dark w-25" id="btn2" onclick="edit(${i})">EDIT</button></h3>`
+
+        }
+    }
+
+    function del(index){
+        let input = document.getElementById("input").value
+        let todolist = document.getElementById('todolist')
+        arr1.splice(index, 1,)
+        todolist.innerHTML = ""
+        for (i = 0; i < arr1.length; i++){
+            todolist.innerHTML += ` <h3> ${arr1[i]} <button class= "btn bttn btn-info w-25" id="btn" onclick="del(${i})">DELETE</button> <button class= "btn bttn btn-dark w-25" id="btn2" onclick="edit(${i})">EDIT</button></h3>`
+        }
+    }
+
+    function edit(i){
+        let ram2 = prompt("enter your list")
+        // let todolist = document.getElementById('todolist')
+        arr1.splice(i, 1, ram2)
+        todolist.innerHTML = ""
+        for (i = 0; i < arr1.length; i++){
+            todolist.innerHTML += ` <h3> ${arr1[i]} <button class= "btn bttn btn-info w-25" id="btn" onclick="del(${i})">DELETE</button> <button class= "btn bttn btn-dark w-25" id="btn2" onclick="edit(${i})">EDIT</button></h3>`
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="today">Grace</h1>
+
+
+    
+    <button onclick="multiply()">multiply</button>
+    <button onclick="Divide()">Divide</button>
+    <button onclick="substract()">substract</button>
+    <button onclick="Add()">Add</button>
+    <button onclick="inc()">increase</button>
+    <button onclick="dec()">decrease</button>
+</body>
+<script>
+    let a = 32
+    let b = 23
+    let c = 99
+    let d = 11
+
+
+
+    function multiply(){
+        console.log(a * b)
+    }
+
+    function Divide(){
+        console.log(c / d)
+    }
+
+    function substract(){
+        console.log(a - d)
+    }
+
+    function Add(){
+        console.log(a + b + c)
+    }
+
+    function inc(){
+        console.log("first" + a++);
+        console.log("second" + b++);
+        console.log("third" + c++);
+        console.log("fourth" + d++);
+    }
+
+    function dec() {
+        console.log("first" + a--);
+        console.log("second" + b--);
+        console.log("third" + c--);
+        console.log("fourth" + d--);
+    }
+
+</script>
+<script src="script.js"></script>
+</html>
